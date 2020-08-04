@@ -146,7 +146,7 @@ const reservedFields = [
  * Create a page. See [the guide on creating and modifying pages](/docs/creating-and-modifying-pages/)
  * for detailed documentation about creating pages.
  * @param {Object} page a page object
- * @param {string} page.path Any valid URL. Must start with a forward slash
+ * @param {string} page.path Any valid path. Must start with a forward slash
  * @param {string} page.matchPath Path that Reach Router uses to match the page on the client side.
  * Also see docs on [matchPath](/docs/gatsby-internals-terminology/#matchpath)
  * @param {string} page.component The absolute path to the component for this page
@@ -1293,9 +1293,9 @@ const maybeAddPathPrefix = (path, pathPrefix) => {
  * html files for redirecting on any static file host.
  *
  * @param {Object} redirect Redirect data
- * @param {string} redirect.fromPath Any valid URL. Must start with a forward slash
+ * @param {string} redirect.fromPath Any valid path. Must start with a forward slash
  * @param {boolean} redirect.isPermanent This is a permanent redirect; defaults to temporary
- * @param {string} redirect.toPath URL of a created page (see `createPage`)
+ * @param {string} redirect.toPath Path of a created page (see `createPage`)
  * @param {boolean} redirect.redirectInBrowser Redirects are generally for redirecting legacy URLs to their new configuration. If you can't update your UI for some reason, set `redirectInBrowser` to true and Gatsby will handle redirecting in the client as well.
  * @param {boolean} redirect.force (Plugin-specific) Will trigger the redirect even if the `fromPath` matches a piece of content. This is not part of the Gatsby API, but implemented by (some) plugins that configure hosting provider redirects
  * @param {number} redirect.statusCode (Plugin-specific) Manually set the HTTP status code. This allows you to create a rewrite (status code 200) or custom error page (status code 404). Note that this will override the `isPermanent` option which also sets the status code. This is not part of the Gatsby API, but implemented by (some) plugins that configure hosting provider redirects
@@ -1303,9 +1303,9 @@ const maybeAddPathPrefix = (path, pathPrefix) => {
  * // Generally you create redirects while creating pages.
  * exports.createPages = ({ graphql, actions }) => {
  *   const { createRedirect } = actions
- *   createRedirect({ fromPath: '/old-url', toPath: '/new-url', isPermanent: true })
- *   createRedirect({ fromPath: '/url', toPath: '/zn-CH/url', Language: 'zn' })
- *   createRedirect({ fromPath: '/not_so-pretty_url', toPath: '/pretty/url', statusCode: 200 })
+ *   createRedirect({ fromPath: '/old-path', toPath: '/new-path', isPermanent: true })
+ *   createRedirect({ fromPath: '/path', toPath: '/zn-CH/path', Language: 'zn' })
+ *   createRedirect({ fromPath: '/not_so-pretty_path', toPath: '/pretty/path', statusCode: 200 })
  *   // Create pages here
  * }
  */
